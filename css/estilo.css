@@ -3,9 +3,73 @@ selector{
     propiedad:valor
 }
 */
-body{
-    background-color: rgb(220, 183, 255);
+
+body {
+    margin: 2em;
+    background-color: rgb(212, 192, 78);
+
 }
-h1,h2{
+
+h1, h2 {
     text-align: center;
+}
+
+header {
+    background-image: url("/img/headerjpg.jpg");
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    width: 90%;
+
+}
+
+header h1 {
+    background-color: rgba(255, 255, 255, 0.616);
+    padding: 10px;
+    width: 300px;
+    height: 35px;
+}
+
+nav {
+    background-color: transparent;
+    height: 50px;
+    position: fixed;
+    top: 310px;
+    left: 50px;
+}
+
+nav ol li {
+    background-color: rgb(197, 95, 0);
+    display: inline;
+    color: white;
+    padding: 15px;
+    margin: 0px 10px;
+}
+
+nav ol li:hover {
+    background-color: rgb(228, 120, 20);
+    color: black;
+    box-shadow: 5px 3px 5px black;
+}
+
+article {
+    padding-top: 400px;
+    width: 80%;
+    margin-left: 10%;
+}
+
+article#casera {
+background: linear-gradient(transparent,  rgb(223, 112, 8));
+
+}
+
+article#aceite {
+    background: linear-gradient(rgb(223, 112, 8), transparent);
+    
+    }
+
+nav ol li a {
+    text-decoration: none;
+    color: white;
 }
