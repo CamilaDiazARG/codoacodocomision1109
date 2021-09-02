@@ -1,0 +1,42 @@
+#justify{
+    display: flex;
+    /*justify-content: center; para centrar los hijos*/
+    /* justify-content: flex-end; para posicionar al final*/
+    /* justify-content: flex-start; para posicionar al final*/
+    /* justify-content: space-arround; para posicionar uniformemente y igual espacio */
+    /* justify-content: space-between; para posicionar uniformemente*/
+}
+
+.primer{
+    /* width: 150px;
+    height: 150px; */
+    width: 30%;
+    background-color: blueviolet;
+}
+
+.primer:after{
+    content: "Este contenido no se va a copiar";
+    color: white;
+    font-size: 20px;
+
+}
+
+.primer:before{
+    content: "Este contenido tampoco no se va a copiar";
+    color: rgb(216, 189, 227);
+    font-size: 15px;
+
+}
+
+.blue{
+    background-color: blue;
+    width: 30%;
+
+}
+
+/* texto a borde, padding
+borde a otra cosa, margin */
+
+li {
+    display: inline;
+}
