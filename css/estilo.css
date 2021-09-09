@@ -5,7 +5,7 @@ selector{
 */
 
 body {
-    margin: 2em;
+    margin: 1em;
     background-color: rgb(212, 192, 78);
 
 }
@@ -54,14 +54,13 @@ nav ol li:hover {
 }
 
 article {
-    padding-top: 400px;
     width: 80%;
     margin-left: 10%;
 }
 
 article#casera {
 background: linear-gradient(transparent,  rgb(223, 112, 8));
-
+margin-top: 400px;
 }
 
 article#aceite {
