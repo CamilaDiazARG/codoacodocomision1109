@@ -1,41 +1,51 @@
-#justify{
+#justify,#otra{
     display: flex;
+    /* flex-wrap: wrap;  los elementos pasan a la siguiente fila y conservan su anchura */
     /*justify-content: center; para centrar los hijos*/
     /* justify-content: flex-end; para posicionar al final*/
-    /* justify-content: flex-start; para posicionar al final*/
-    /* justify-content: space-arround; para posicionar uniformemente y igual espacio */
-    /* justify-content: space-between; para posicionar uniformemente*/
+    /* justify-content: flex-start; esta por defecto*/
+    /* justify-content: space-arround; para posicionar igual espacio margen */
+    /* justify-content: space-between; para posicionar uniformemente a los lados*/
+    justify-content: space-evenly; /* mismo espacios en todos los lados */
+    /* justify-content: baseline; los elementos se alinean sobre la línea de base del texto */
+
+
+}
+h1{
+text-align: center;
+font-family: 'Lucida Sans', sans-serif;
+font-weight: bold;
 }
 
 .primer{
     /* width: 150px;
     height: 150px; */
     width: 30%;
-    background-color: blueviolet;
+    background-color: hotpink;
+    margin-bottom: 10px;
 }
 
 .primer:after{
     content: "Este contenido no se va a copiar";
     color: white;
-    font-size: 20px;
+    font-size: 18px;
+    font-family: serif;
 
 }
 
 .primer:before{
     content: "Este contenido tampoco no se va a copiar";
-    color: rgb(216, 189, 227);
-    font-size: 15px;
+    color:lightcyan;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: serif;
 
 }
 
 .blue{
     background-color: blue;
     width: 30%;
-
 }
-
-/* texto a borde, padding
-borde a otra cosa, margin */
 
 li {
     display: inline;
