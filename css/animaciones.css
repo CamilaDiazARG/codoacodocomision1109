@@ -1,0 +1,92 @@
+* {
+    background: seashell;
+    font-family: 'Galada', cursive;
+}
+
+h1{
+    text-align: center;
+    color: darkred;
+    background-color: transparent;
+    animation-iteration-count: 1;
+
+}
+
+ul li{
+    display: inline;
+    padding: 10px;
+    margin: 5px;
+    background-color: darkred;
+    color: blanchedalmond;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+ul li:hover{
+   animation: menu 1s infinite;
+}
+
+@keyframes mover {
+    from{top: 110px;color:red}
+    to {top: 250px;color:black}
+}
+
+#nave:hover{
+    position: absolute;
+    animation-name: mover;
+    animation-duration: 5s;
+}
+
+@keyframes fadein {
+    from{opacity: 0;}
+    to {opacity: 1;}
+    0% { color: red;}
+    50% {color: darkred;}
+    100% {color: black;}
+}
+
+#astronauta{
+    animation-name: fadein;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    background-color: transparent;
+}
+
+
+@keyframes roll-in-left{
+  from{opacity: 0;transform: translate3d(-100%, 0, 0) rotate3d(0, 0, 1, -120deg);}
+  to{ opacity: 1; transform: translate3d(0, 0, 0); }
+  0%{color:lightcoral}
+  100% {color: darkred;}
+}
+
+#empire{
+    position: absolute;
+    margin-left: 2em;
+    background-color: transparent;
+    animation-name: roll-in-left;
+    animation-duration: 7s;
+    animation-iteration-count: 3;
+    animation-fill-mode: forwards;
+}
+
+#nave{
+background-color: transparent;
+color: darkred;
+
+}
+
+@keyframes menu{
+    0%{ 
+        padding: 10px;
+        background-color: darkred;
+        color: blanchedalmond;
+    }
+    100%{
+        padding: 20px;
+        background-color: salmon;
+        color: black;
+        box-shadow: 5px 5px 5px black;
+        border-radius: 30%;
+        font-size: 25px;
+     }
+}
