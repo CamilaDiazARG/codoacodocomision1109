@@ -1,0 +1,16 @@
+#sec_art_div_h{
+
+    text-align: center;
+}
+
+#art_img{
+    width: 100%;
+    filter: brightness(60%);
+
+}
+
+#div_img_text {
+position: absolute;
+color: white;
+padding-left: 50%;
+}
