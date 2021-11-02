@@ -76,3 +76,4 @@ let resultado = "<p>El resultado de: " + num + " y " + num2 +" es: " + (num +num
 elemento.innerHTML=resultado;
 elemento.innerHTML+="Hola"
 */
+

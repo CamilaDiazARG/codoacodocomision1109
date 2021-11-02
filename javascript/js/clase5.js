@@ -193,3 +193,11 @@ CrearFormulario();
 
 // let numeros = [5,78,98,77];
 // console.log(numeros.indexOf(77))
+
+var frutas = ["Manzana", "Plátano", "Naranja"];
+
+for (i=0;i<3;i++) {
+
+  console.log(frutas[i]);
+
+}
