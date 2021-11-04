@@ -1,19 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package mi_aplicacion;
 
-/**
- *
- * @author Camila
- */
+import niveles.Niveles;
+        
 public class Mi_aplicacion {
-
-    /**
-     * @param args the command line arguments
-     */
+  
     public static void main(String[] args) {
         Juego jugador = new Juego(0,3,"Pepe","ak45","Maloso");
         Juego jugador1 = new Juego(0,3,"Pepito","ak49","Maloso");
@@ -22,8 +13,16 @@ public class Mi_aplicacion {
         System.out.println(jugador.mostras_vidas());
         //Sout y tab 
         // TODO code application logic here
+        Niveles niveles = new Niveles("media","dos");
+        niveles.setDificultad("principiante");
+        System.out.println(niveles.getDificultad());
+        jugador.vidas=0;
+        
+        if(jugador.vidas==0){
+            System.out.println(niveles.reiniciar());
+        }
     }
-    
+ 
 }
 
 
