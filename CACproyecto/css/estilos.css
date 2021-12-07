@@ -1,0 +1,84 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    background: white;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+p {
+    margin-top: 15px;
+}
+
+hr {
+    background-color: orange;
+    height: 20px;
+    margin-top: -7px;
+    margin-bottom: -2px;
+}
+
+#header{
+    margin: 0px;
+    width: 600px;
+    position: fixed;
+    z-index: 2;
+    text-align: right;
+    
+}
+
+ul, ol{
+    list-style: none;
+}
+
+.nav li a {
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    padding: 20px 35px;
+    display: block;
+}
+
+.nav li a:hover {
+    background-color: orange;
+
+}
+
+.nav > li {
+    float: left;
+}
+
+.nav li ul{
+    display: none;
+    position: absolute;
+    min-width: 140px;
+}
+
+.nav li:hover > ul{
+    display: block;
+}
+
+.nav li ul li {
+    position: relative;
+}
+
+.nav li ul li ul {
+    right: -140px;
+    top: 0px;
+
+}
+
+.imagen{
+    z-index: 1;
+    position: relative;
+    margin: 0px;
+}
+
+.texto{
+    z-index: 1;
+    position: relative;
+    margin: 20px;
+    text-align: justify;
+}
