@@ -3,15 +3,15 @@ package modelo;
 
 public class Alumnos {
     private int id;
-    private String nombre;
-    private String apellido;
+    private String nombres;
+    private String apellidos;
     private String email;
     private int telefono;
 
-    public Alumnos(int id, String nombre, String apellido, String email, int telefono) {
+    public Alumnos(int id, String nombres, String apellidos, String email, int telefono) {
         this.id = id;
-        this.nombre = nombre;
-        this.apellido = apellido;
+        this.nombres = nombres;
+        this.apellidos = apellidos;
         this.email = email;
         this.telefono = telefono;
     }
@@ -24,20 +24,20 @@ public class Alumnos {
         this.id = id;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getNombres() {
+        return nombres;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setNombre(String nombres) {
+        this.nombres = nombres;
     }
 
-    public String getApellido() {
-        return apellido;
+    public String getApellidos() {
+        return apellidos;
     }
 
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
+    public void setApellido(String apellidos) {
+        this.apellidos = apellidos;
     }
 
     public String getEmail() {

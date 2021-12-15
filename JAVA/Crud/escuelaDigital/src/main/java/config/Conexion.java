@@ -3,18 +3,20 @@ package config;
 import java.sql.*;
 
 public class Conexion {
-    public Connection getConection(){
+     public String driver = "com.mysql.cj.jdbc.Driver";
+        public Connection getConection(){
+        
         Connection conexion = null;
         try{
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            conexion = DriverManager.getConnection("jdbc:mysql//localhost:3306/comision1109",
-                    "camidiaz", "123456");
-                    
-            }catch(ClassNotFoundException | SQLException e){
-            System.out.println("e.toString()");
-            }
+            Class.forName(driver);
+            conexion = DriverManager.getConnection(
+                    "jdbc:mysql://localhost:3306/comision1109","camidiaz", "123456");
+        }catch(ClassNotFoundException | SQLException e){
+            System.out.println(e.toString());
+        }
             return conexion;
-    }   
+    }
+}
     /*public static void main(String[] entrada) throws SQLException{
         Connection c = null;
         Conexion con = new Conexion();
@@ -36,4 +38,3 @@ public class Conexion {
     }
     */
     
-}

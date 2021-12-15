@@ -19,17 +19,17 @@ public class AlumnosDAO {
         List<Alumnos> lista = new ArrayList<>();
         //Lista clase abstracta
         try{
-            ps = conexion.prepareStatement("SELEC * FROM alumnos");
+            ps = conexion.prepareStatement("SELECT * FROM alumnos");
             rs = ps.executeQuery();
             
             while(rs.next()){
                 int id = rs.getInt("id");
-                    String nombres = rs.getString("nombre");
-                    String apellidos = rs.getString("apellido");
+                    String nombres = rs.getString("nombres");
+                    String apellidos = rs.getString("apellidos");
                     String email = rs.getString("email");
                     int telefono = rs.getInt("telefono");
                     Alumnos alumnos = new Alumnos(id,nombres,apellidos,email,telefono);
-                    lista.add(alumnos) ;
+                    lista.add(alumnos);
             }
             return lista;
             
@@ -45,18 +45,17 @@ public class AlumnosDAO {
         Alumnos alumno = null;
         
         try{
-            ps = conexion.prepareStatement("SELEC id,nombres,apellidos,email,telefono "
+            ps = conexion.prepareStatement("SELECT id,nombres,apellidos,email,telefono "
                     + "FROM alumnos WHERE id = ?");
             ps.setInt(1, _id);
             rs = ps.executeQuery();
             
             while(rs.next()){
                 int id = rs.getInt("id");
-                    String nombres = rs.getString("nombre");
-                    String apellidos = rs.getString("apellido");
+                    String nombres = rs.getString("nombres");
+                    String apellidos = rs.getString("apellidos");
                     String email = rs.getString("email");
                     int telefono = rs.getInt("telefono");
-                    Alumnos alumnos = new Alumnos(id,nombres,apellidos,email,telefono);
                     alumno = new Alumnos(id,nombres,apellidos,email,telefono) ;
                 }
                 return alumno;
@@ -66,5 +65,51 @@ public class AlumnosDAO {
             return null;
         }
     }
-        
+    public boolean insertarAlumno(Alumnos alumno){
+        PreparedStatement ps;
+        try{
+            ps = conexion.prepareStatement("INSERT INTO alumnos(nombres,apellidos,email,telefono)VALUES(?,?,?,?)");
+            ps.setString(1,alumno.getNombres());
+            ps.setString(2,alumno.getApellidos());
+            ps.setString(3,alumno.getEmail());
+            ps.setInt(4,alumno.getTelefono());
+            ps.execute();
+            return true;
+            
+        }catch(SQLException e){
+            System.out.println(e.toString());
+            return false;
+        }
+    }
+   
+    public boolean actualizarAlumno(Alumnos alumno){
+    PreparedStatement ps;
+        try{
+            ps = conexion.prepareStatement("UPDATE alumnos SET nombres=?, apellidos=?,email=?,telefono=? WHERE id=?");
+            ps.setString(1,alumno.getNombres());
+            ps.setString(2,alumno.getApellidos());
+            ps.setString(3,alumno.getEmail());
+            ps.setInt(4,alumno.getTelefono());
+            ps.setInt(5, alumno.getId());
+            ps.execute();
+            return true;
+            
+        }catch(SQLException e){
+            System.out.println(e.toString());
+            return false;
+        }
+    }
+    public boolean eliminarAlumno(int _id){
+        PreparedStatement ps;
+        try{
+            ps = conexion.prepareStatement("DELETE FROM alumnos WHERE id=?");
+            ps.setInt(1, _id);
+            ps.execute();
+            return true;
+            
+        }catch(SQLException e){
+            System.out.println(e.toString());
+            return false;
+        }
+    }   
   }
