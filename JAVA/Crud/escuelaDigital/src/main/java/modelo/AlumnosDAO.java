@@ -27,7 +27,7 @@ public class AlumnosDAO {
                     String nombres = rs.getString("nombres");
                     String apellidos = rs.getString("apellidos");
                     String email = rs.getString("email");
-                    int telefono = rs.getInt("telefono");
+                    String telefono = rs.getString("telefono");
                     Alumnos alumnos = new Alumnos(id,nombres,apellidos,email,telefono);
                     lista.add(alumnos);
             }
@@ -45,8 +45,7 @@ public class AlumnosDAO {
         Alumnos alumno = null;
         
         try{
-            ps = conexion.prepareStatement("SELECT id,nombres,apellidos,email,telefono "
-                    + "FROM alumnos WHERE id = ?");
+            ps = conexion.prepareStatement("SELECT id,nombres,apellidos,email,telefono FROM alumnos WHERE id = ?");
             ps.setInt(1, _id);
             rs = ps.executeQuery();
             
@@ -55,8 +54,8 @@ public class AlumnosDAO {
                     String nombres = rs.getString("nombres");
                     String apellidos = rs.getString("apellidos");
                     String email = rs.getString("email");
-                    int telefono = rs.getInt("telefono");
-                    alumno = new Alumnos(id,nombres,apellidos,email,telefono) ;
+                    String telefono = rs.getString("telefono");
+                    alumno = new Alumnos(id,nombres,apellidos,email,telefono);
                 }
                 return alumno;
             
@@ -72,7 +71,7 @@ public class AlumnosDAO {
             ps.setString(1,alumno.getNombres());
             ps.setString(2,alumno.getApellidos());
             ps.setString(3,alumno.getEmail());
-            ps.setInt(4,alumno.getTelefono());
+            ps.setString(4,alumno.getTelefono());
             ps.execute();
             return true;
             
@@ -83,17 +82,16 @@ public class AlumnosDAO {
     }
    
     public boolean actualizarAlumno(Alumnos alumno){
-    PreparedStatement ps;
-        try{
-            ps = conexion.prepareStatement("UPDATE alumnos SET nombres=?, apellidos=?,email=?,telefono=? WHERE id=?");
-            ps.setString(1,alumno.getNombres());
-            ps.setString(2,alumno.getApellidos());
-            ps.setString(3,alumno.getEmail());
-            ps.setInt(4,alumno.getTelefono());
-            ps.setInt(5, alumno.getId());
-            ps.execute();
-            return true;
-            
+        PreparedStatement ps;
+         try{
+          ps = conexion.prepareStatement("UPDATE alumnos SET nombres=?, apellidos=?, email=?,telefono=? WHERE id=?");
+          ps.setString(1,alumno.getNombres());
+          ps.setString(2,alumno.getApellidos());
+          ps.setString(3,alumno.getEmail());
+          ps.setString(4,alumno.getTelefono());
+          ps.setInt(5, alumno.getId());
+          ps.execute();
+          return true;
         }catch(SQLException e){
             System.out.println(e.toString());
             return false;
@@ -112,4 +110,22 @@ public class AlumnosDAO {
             return false;
         }
     }   
+    
+    public boolean ingresarUsuario(String usuario, String clave){
+        PreparedStatement ps;
+        ResultSet rs;
+      
+        try{
+            ps = conexion.prepareStatement("SELECT email,password FROM usuarios WHERE email=?");
+            ps.setString(1, usuario);
+            rs = ps.executeQuery();
+            
+            while(rs.next()){
+                return usuario.equals(rs.getString("email"))&& clave.equals(rs.getString("password"));
+            }return false;
+        }catch(SQLException e){
+            System.out.println(e.toString());
+            return false;
+        }
+    }
   }

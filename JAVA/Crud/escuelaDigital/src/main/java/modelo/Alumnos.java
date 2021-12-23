@@ -6,9 +6,9 @@ public class Alumnos {
     private String nombres;
     private String apellidos;
     private String email;
-    private int telefono;
+    private String telefono;
 
-    public Alumnos(int id, String nombres, String apellidos, String email, int telefono) {
+    public Alumnos(int id, String nombres, String apellidos, String email, String telefono) {
         this.id = id;
         this.nombres = nombres;
         this.apellidos = apellidos;
@@ -48,11 +48,11 @@ public class Alumnos {
         this.email = email;
     }
 
-    public int getTelefono() {
+    public String getTelefono() {
         return telefono;
     }
 
-    public void setTelefono(int telefono) {
+    public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
     
